@@ -25,7 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //Route::get('/films/{id}',[FilmTestController::class,'show']);
 //Route::get('/films',[FilmTestController::class,'index']);
 
-//Route::resource('films',FilmController::class);
+Route::resource('films',FilmController::class);
 
 Route::get('/users',[UserController::class,'index']);
 Route::get('/users/{id}',[UserController::class,'show']);
@@ -37,5 +37,7 @@ Route::get('/tipfilmas/{id}',[TipFilmaController::class,'show']);
 
 Route::post('/register',[AuthController::class,'register']);
 Route::post('/login',[AuthController::class,'login']);
+
+Route::delete('/films/{id}',[FilmController::class,'destroy']);
 //Route::resource('tipfilmas',TipFilmaController::class);
 
